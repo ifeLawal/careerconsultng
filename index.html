@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tolus Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <style>
+        :root {
+            --light-blue: #4885F4;
+            --services-circle-radius: 50px;
+            --resource-circle-radius: 40px;
+            --circle-clip-size: 44%;
+        }
+
+        .text-blue {
+            color: var(--light-blue);
+        }
+
+        .grid__icons {
+            position: relative;
+            top: -40px;
+        }
+
+        .line__icons {
+            position: relative;
+        }
+
+        .bg__gradient {
+            height: 100vh;
+            /* background: rgb(17,17,140);
+background: radial-gradient(circle, rgba(17,17,140,1) 0%, rgba(9,9,121,1) 27%); */
+            /* background-image: linear-gradient( 109.6deg,  rgba(61,245,167,.91) 11.2%, rgba(9,111,224,.41) 91.1% ); */
+            background-color: #2d2750;
+            background-image:
+                /*radial-gradient(65.82% 65.82% at 50% 24.75%, rgba(116, 104, 255, 0.6) 0, rgba(45, 38, 80, 0.9) 100%), */
+                radial-gradient(circle 610px at 5.2% 51.6%, rgba(5, 8, 114, .8) 0%, rgba(7, 3, 53, .8) 97.5%),
+                url('src/career-in-tech-consulting.jpeg');
+            background-size: cover;
+        }
+
+        .grid__icon-circle {
+            background-color: #EFEEEF;
+            border-radius: 100%;
+            border: 10px solid #FFF;
+            width: calc(var(--services-circle-radius) * 2);
+            height: calc(var(--services-circle-radius) * 2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .line__icon-circle {
+            background-color: #EFEEEF;
+            border-radius: 100%;
+            border: 10px solid #FFF;
+            width: calc(var(--resource-circle-radius) * 2);
+            height: calc(var(--resource-circle-radius) * 2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (min-width: 768px) {
+            .col-md-5-items {
+                max-width: 20%;
+            }
+        }
+
+
+        .line__circle::before {
+            content: "";
+            height: 0px;
+            width: calc(100% + 30px);
+            color: #FFF;
+            position: relative;
+            z-index: -1;
+            /* left: 100%; */
+            border: 2px solid #FFF;
+            top: calc(var(--resource-circle-radius) + 5px);
+        }
+
+
+        .grid__icon-box {
+            background-color: var(--light-blue);
+            position: relative;
+            z-index: -1;
+            top: -15px;
+            font-size: 1.3em;
+            padding: 50px 25px 10px 25px;
+        }
+
+        .image__face {
+            left: 30px;
+            clip-path: circle(var(--circle-clip-size));
+        }
+
+        .image__separator {
+            background: white;
+            clip-path: circle(calc(var(--circle-clip-size) - 3%));
+            height: 240px;
+        }
+
+        .image__separator-black {
+            background: #97A5BE;
+            clip-path: circle(calc(var(--circle-clip-size) - 1%));
+        }
+
+        .image__face-pic {
+            clip-path: circle(calc(var(--circle-clip-size) - 5%));
+            height: 100%;
+        }
+
+        .profile-box__image {
+            order: 2;
+            border: 3px solid #97A5BE;
+            border-left: white;
+            border-radius: 0px 250px 250px 0px;
+        }
+
+        
+
+        
+
+        .profile-box {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .profile-box__text {
+            order: 1;
+            border: 3px solid #97A5BE;
+            padding: 20px;
+            border-right: white;
+            display: flex;
+            margin: 0px -15px;
+            flex-wrap: wrap;
+        }
+
+        .profile-box__text--size {
+            font-size: 1.5rem;
+            max-width: 85%;
+        }
+
+        @media (max-width: 1180px) and (min-width: 970px) {
+            .image__face {
+                left: -10px;
+                transform-origin: center;
+                transform: scale(1.3);
+            }
+
+        }
+
+        @media screen and (max-width: 970px) {
+
+            .image__face {
+                left: 0px;
+                top: 10px;
+            }
+
+            .profile-box__text {
+                border: 3px solid #97A5BE;
+                display: block;
+            }
+
+            .profile-box__image {
+                border: 0px solid #97A5BE;
+                float: left;
+            }
+
+            .profile-box {
+                display: block;
+                /* flex-direction: column; */
+            }
+
+            .profile-box__text--size {
+                font-size: 1.5rem;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg__gradient">
+        <h1 style="color:white" class="text-center">Want a career in Consulting or Tech</h1>
+        <marquee scrollamount=13 class="d-flex flex-row"><img style="height: 30px;"
+                src="/logos/Amazon_Logo_White.png"><img style="height: 30px;" src="/logos/Google_Logo_White.png">
+        </marquee>
+    </div>
+    <div class="container">
+        <div class="row text-center flex-column">
+            <h1 class="py-5">Let's Make You a Dream Candidate!</h1>
+        </div>
+    </div>
+    <h1
+        style="background-color: var(--light-blue); padding: 20px 0px 50px 0px; color:#FFF;width: 100%;text-align: center;">
+        Services
+    </h1>
+    <div class="container">
+        <div class="row text-center">
+            <div class="d-flex flex-row w-100 flex-wrap">
+                <div
+                    class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
+                    <div class="grid__icon-circle">
+                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                    </div>
+                    <div class="grid__icon-box">
+                        Career Transition
+                    </div>
+                </div>
+                <div
+                    class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
+                    <div class="grid__icon-circle">
+                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                    </div>
+                    <div class="grid__icon-box">
+                        Career Transition
+                    </div>
+                </div>
+                <div
+                    class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
+                    <div class="grid__icon-circle">
+                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                    </div>
+                    <div class="grid__icon-box">
+                        Career Transition
+                    </div>
+                </div>
+                <div
+                    class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
+                    <div class="grid__icon-circle">
+                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                            style="font-size: 50px;color: var(--light-blue);"></span>
+                    </div>
+                    <div class="grid__icon-box">
+                        Career Transition
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pb-3 px-5 profile-box">
+        <div class="align-items-center justify-content-center d-flex profile-box__image">
+            <div class="image__face position-relative">
+                <div class="image__separator-black">
+                    <div class="image__separator">
+                        <img class="image__face-pic" src="src/Tolu-Lawal.jpeg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-box__text">
+            <p class="text-blue profile-box__text--size">Tolu’s services came out of his own
+                experience landing jobs at Accenture, Uber, Google, & Stripe.</p>
+            <p class="text-blue profile-box__text--size">He has helped clients secure offers
+                from Uber, Amazon, Walkme, Microsoft,
+                Salesforce, Apple, Facebook, Lyft, Google, Bumble, Spotify, Sony...</p>
+        </div>
+    </div>
+    <div
+        style="background-color: var(--light-blue); color:#FFF;font-size: 2em; font-weight: 500; width: 100%;text-align: center;padding: 20px 0px;position: relative; z-index: -2;">
+        <div>Resources</div>
+        <div class="d-flex flex-row flex-wrap py-4">
+            <div
+                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
+                <div class="line__icon-circle flex-column">
+                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                </div>
+                <div>Sample Resumes</div>
+            </div>
+            <div
+                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
+                <div class="line__icon-circle flex-column">
+                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                </div>
+                <div>Sample Resumes</div>
+            </div>
+            <div
+                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
+                <div class="line__icon-circle flex-column">
+                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                </div>
+                <div>Sample Resumes</div>
+            </div>
+            <div
+                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
+                <div class="line__icon-circle flex-column">
+                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                </div>
+                <div>Sample Resumes</div>
+            </div>
+            <div
+                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
+                <div class="line__icon-circle flex-column">
+                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                </div>
+                <div>Sample Resumes</div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4 px-4">
+        <div class="row text-center">
+            <div class="d-flex flex-column w-100">
+                <h1 style="color:var(--light-blue);">Contact</h1>
+                <h2>therightmotives@gmail.com</h2>
+                <a href="www.google.com" style="text-decoration: underline;">
+                    <h4>Click here to schedule a free 15 minute consultation.</h4>
+                </a>
+            </div>
+        </div>
+
+</body>
+
+</html>
