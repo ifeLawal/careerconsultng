@@ -44,6 +44,7 @@ background: radial-gradient(circle, rgba(17,17,140,1) 0%, rgba(9,9,121,1) 27%); 
         }
 
         .grid__icon-circle {
+            z-index: 2;
             background-color: #EFEEEF;
             border-radius: 100%;
             border: 10px solid #FFF;
@@ -88,8 +89,8 @@ background: radial-gradient(circle, rgba(17,17,140,1) 0%, rgba(9,9,121,1) 27%); 
         .grid__icon-box {
             background-color: var(--light-blue);
             position: relative;
-            z-index: -1;
-            top: -15px;
+            z-index: 0;
+            top: -25px;
             font-size: 1.3em;
             padding: 50px 25px 10px 25px;
         }
@@ -116,22 +117,81 @@ background: radial-gradient(circle, rgba(17,17,140,1) 0%, rgba(9,9,121,1) 27%); 
         }
 
         .profile-box__image {
+            background-color: #FFF;
             order: 2;
             border: 3px solid #97A5BE;
             border-left: white;
             border-radius: 0px 250px 250px 0px;
         }
 
-        
+        .css-gqz0ym {
+            background: linear-gradient(136deg, #F5D114 12%, #D0990D 93%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        
+        #scroll-text {
+            text-align: right;
+
+            /* animation properties */
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+
+            -moz-animation: my-animation 18s linear infinite;
+            -webkit-animation: my-animation 18s linear infinite;
+            animation: my-animation 18s linear infinite;
+        }
+
+        /* for Firefox */
+        @-moz-keyframes my-animation {
+            from {
+                -moz-transform: translateX(0%);
+            }
+
+            to {
+                -moz-transform: translateX(100%);
+            }
+        }
+
+        /* for Chrome */
+        @-webkit-keyframes my-animation {
+            from {
+                -webkit-transform: translateX(-100%);
+            }
+
+            to {
+                -webkit-transform: translateX(100%);
+            }
+        }
+
+        @keyframes my-animation {
+            from {
+                -moz-transform: translateX(-65%);
+                -webkit-transform: translateX(-65%);
+                transform: translateX(-65%);
+            }
+
+            to {
+                -moz-transform: translateX(65%);
+                -webkit-transform: translateX(65%);
+                transform: translateX(65%);
+            }
+
+        }
 
         .profile-box {
             display: flex;
             flex-direction: row;
         }
 
+        .pistachio {
+            background-color: rgb(250, 239, 223);
+            z-index: -1;
+        }
+
         .profile-box__text {
+            background-color: #FFF;
             order: 1;
             border: 3px solid #97A5BE;
             padding: 20px;
@@ -186,11 +246,17 @@ background: radial-gradient(circle, rgba(17,17,140,1) 0%, rgba(9,9,121,1) 27%); 
 </head>
 
 <body>
-    <div class="bg__gradient">
-        <h1 style="color:white" class="text-center">Want a career in Consulting or Tech</h1>
-        <marquee scrollamount=13 class="d-flex flex-row"><img style="height: 30px;"
-                src="/logos/Amazon_Logo_White.png"><img style="height: 30px;" src="/logos/Google_Logo_White.png">
-        </marquee>
+    <div class="bg__gradient d-flex align-items-center justify-content-center flex-column">
+        <h1 style="color:white;font-size: 4.75em;margin: 0 auto;max-width: 60%;" class="text-center css-gqz0ym">Want a
+            career in Consulting or Tech?</h1>
+
+        <!-- <marquee BEHAVIOR="loop" scrollamount=13 class="d-flex flex-row"
+            margin-right: 50px;">
+        </marquee> -->
+        <div id="scroll-text" style="position: absolute;bottom: 10%;">
+            <img style="height: 75px;"
+                src="https://placement-build.s3.us-east-2.amazonaws.com/assets/img/brands.86ffd21a67bc3b917873ae5d155aa97f.svg">
+        </div>
     </div>
     <div class="container">
         <div class="row text-center flex-column">
@@ -201,113 +267,121 @@ background: radial-gradient(circle, rgba(17,17,140,1) 0%, rgba(9,9,121,1) 27%); 
         style="background-color: var(--light-blue); padding: 20px 0px 50px 0px; color:#FFF;width: 100%;text-align: center;">
         Services
     </h1>
-    <div class="container">
-        <div class="row text-center">
-            <div class="d-flex flex-row w-100 flex-wrap">
-                <div
-                    class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
-                    <div class="grid__icon-circle">
-                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+    <div class="pistachio">
+        <div class="container">
+            <div class="row text-center">
+                <div class="d-flex flex-row w-100 flex-wrap">
+                    <div
+                        class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
+                        <div class="grid__icon-circle">
+                            <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                                style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                        </div>
+                        <div class="grid__icon-box">
+                            Career Transition
+                        </div>
                     </div>
-                    <div class="grid__icon-box">
-                        Career Transition
+                    <div
+                        class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
+                        <div class="grid__icon-circle">
+                            <span class="iconify" data-inline="false" data-icon="bx:bxs-book-content"
+                                style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                        </div>
+                        <div class="grid__icon-box">
+                            Resume Optimization
+                        </div>
                     </div>
-                </div>
-                <div
-                    class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
-                    <div class="grid__icon-circle">
-                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                    <div
+                        class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
+                        <div class="grid__icon-circle">
+                            <span class="iconify" data-inline="false" data-icon="bi:people-fill"
+                                style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                        </div>
+                        <div class="grid__icon-box">
+                            Interview Preparation
+                        </div>
                     </div>
-                    <div class="grid__icon-box">
-                        Career Transition
-                    </div>
-                </div>
-                <div
-                    class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
-                    <div class="grid__icon-circle">
-                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
-                    </div>
-                    <div class="grid__icon-box">
-                        Career Transition
-                    </div>
-                </div>
-                <div
-                    class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
-                    <div class="grid__icon-circle">
-                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                            style="font-size: 50px;color: var(--light-blue);"></span>
-                    </div>
-                    <div class="grid__icon-box">
-                        Career Transition
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container pb-3 px-5 profile-box">
-        <div class="align-items-center justify-content-center d-flex profile-box__image">
-            <div class="image__face position-relative">
-                <div class="image__separator-black">
-                    <div class="image__separator">
-                        <img class="image__face-pic" src="src/Tolu-Lawal.jpeg" />
+                    <div
+                        class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
+                        <div class="grid__icon-circle">
+                            <span class="iconify" data-inline="false" data-icon="fa-solid:comments-dollar"
+                                style="font-size: 50px;color: var(--light-blue);"></span>
+                        </div>
+                        <div class="grid__icon-box">
+                            Offer Negotiation
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="profile-box__text">
-            <p class="text-blue profile-box__text--size">Tolu’s services came out of his own
-                experience landing jobs at Accenture, Uber, Google, & Stripe.</p>
-            <p class="text-blue profile-box__text--size">He has helped clients secure offers
-                from Uber, Amazon, Walkme, Microsoft,
-                Salesforce, Apple, Facebook, Lyft, Google, Bumble, Spotify, Sony...</p>
+
+        <div class="container pb-3 px-5 profile-box">
+            <div class="align-items-center justify-content-center d-flex profile-box__image">
+                <div class="image__face position-relative">
+                    <div class="image__separator-black">
+                        <div class="image__separator">
+                            <img class="image__face-pic" src="src/Tolu-Lawal.jpeg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-box__text">
+                <p class="text-blue profile-box__text--size">Tolu’s services came out of his own
+                    experience landing jobs at <img style="height:60px;" src="/logos/Accenture-Logo.png"
+                        alt="Accenture logo" />, <img style="height:15px;" src="/logos/Uber_logo.png"
+                        alt="Uber logo" />,
+                    <img style="height:30px;" src="/logos/Google_Logo.png" alt="Google Logo" /> &<img
+                        style="height:30px;" src="/logos/Stripe_logo_colored.png" alt="Stripe Logo" />.
+                </p>
+                <p class="text-blue profile-box__text--size">He has helped clients secure offers
+                    from Uber, Amazon, Walkme, Microsoft,
+                    Salesforce, Apple, Facebook, Lyft, Google, Bumble, Spotify, Sony...</p>
+            </div>
         </div>
     </div>
     <div
-        style="background-color: var(--light-blue); color:#FFF;font-size: 2em; font-weight: 500; width: 100%;text-align: center;padding: 20px 0px;position: relative; z-index: -2;">
+        style="background-color: var(--light-blue); color:#FFF;font-size: 2em; font-weight: 500; width: 100%;text-align: center;padding: 20px 0px;position: relative; z-index: 0;">
         <div>Resources</div>
         <div class="d-flex flex-row flex-wrap py-4">
             <div
                 class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
                 <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                    <span class="iconify" data-inline="false" data-icon="ph:files-fill"
+                        style="font-size: 40px;color: var(--light-blue);border-width:150px;"></span>
                 </div>
-                <div>Sample Resumes</div>
+                <div>Sample<br>Resumes</div>
             </div>
             <div
                 class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
                 <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                    <span class="iconify" data-inline="false" data-icon="fluent:book-question-mark-24-regular"
+                        style="font-size: 40px;color: var(--light-blue);border-width:150px;"></span>
                 </div>
-                <div>Sample Resumes</div>
+                <div>Questions<br>Repository</div>
             </div>
             <div
                 class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
                 <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                    <span class="iconify" data-inline="false" data-icon="bi:collection-play-fill"
+                        style="font-size: 40px;color: var(--light-blue);border-width:150px;"></span>
                 </div>
-                <div>Sample Resumes</div>
+                <div>Curated<br>Videos/books</div>
             </div>
             <div
                 class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
                 <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                    <span class="iconify" data-inline="false" data-icon="clarity:employee-group-solid"
+                        style="font-size: 40px;color: var(--light-blue);border-width:150px;"></span>
                 </div>
-                <div>Sample Resumes</div>
+                <div>Employee<br>Referrals</div>
             </div>
             <div
                 class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
                 <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                    <span class="iconify" data-inline="false" data-icon="dashicons:money-alt"
                         style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
                 </div>
-                <div>Sample Resumes</div>
+                <div>Pay<br>Data</div>
             </div>
         </div>
     </div>
