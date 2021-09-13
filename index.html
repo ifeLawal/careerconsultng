@@ -11,390 +11,145 @@
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     <style>
         :root {
-            --light-blue: #4885F4;
+            --light-blue: #7F8EF4;
+            --light-cream: #FFF2E6;
+            --light-gray: #999;
+            --light-black: #333;
             --services-circle-radius: 50px;
             --resource-circle-radius: 40px;
             --circle-clip-size: 44%;
         }
 
-        .text-blue {
-            color: var(--light-blue);
+        body {
+            color: var(--light-black);
         }
 
-        .grid__icons {
-            position: relative;
-            top: -40px;
+        p {
+            color: var(--light-gray);
+            /* max-width: 65%; */
+            margin: 0 auto;
         }
 
-        .line__icons {
-            position: relative;
+        .subtitle.regular {
+            margin-bottom: 40px;
+            font-size: 20px;
+            line-height: 30px;
         }
 
-        .bg__gradient {
-            height: 100vh;
-            /* background: rgb(17,17,140);
-background: radial-gradient(circle, rgba(17,17,140,1) 0%, rgba(9,9,121,1) 27%); */
-            /* background-image: linear-gradient( 109.6deg,  rgba(61,245,167,.91) 11.2%, rgba(9,111,224,.41) 91.1% ); */
-            background-color: #2d2750;
-            background-image:
-                /*radial-gradient(65.82% 65.82% at 50% 24.75%, rgba(116, 104, 255, 0.6) 0, rgba(45, 38, 80, 0.9) 100%), */
-                radial-gradient(circle 610px at 5.2% 51.6%, rgba(5, 8, 114, .8) 0%, rgba(7, 3, 53, .8) 97.5%),
-                url('src/career-in-tech-consulting.jpeg');
-            background-size: cover;
+        .success> :nth-child(n) {
+            margin: 0px 15px 30px;
         }
 
-        .grid__icon-circle {
-            z-index: 2;
-            background-color: #EFEEEF;
-            border-radius: 100%;
-            border: 10px solid #FFF;
-            width: calc(var(--services-circle-radius) * 2);
-            height: calc(var(--services-circle-radius) * 2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .paragraph {
+            max-width: 350px;
+            margin-right: 0;
+            margin-bottom: 0;
+            padding-right: 0;
+            padding-left: 0;
+            color: #999;
+            font-size: 17px;
+            line-height: 26px;
         }
 
-        .line__icon-circle {
-            background-color: #EFEEEF;
-            border-radius: 100%;
-            border: 10px solid #FFF;
-            width: calc(var(--resource-circle-radius) * 2);
-            height: calc(var(--resource-circle-radius) * 2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        @media screen and (min-width: 768px) {
-            .col-md-5-items {
-                max-width: 20%;
-            }
-        }
-
-
-        .line__circle::before {
-            content: "";
-            height: 0px;
-            width: calc(100% + 30px);
-            color: #FFF;
-            position: relative;
-            z-index: -1;
-            /* left: 100%; */
-            border: 2px solid #FFF;
-            top: calc(var(--resource-circle-radius) + 5px);
-        }
-
-
-        .grid__icon-box {
-            background-color: var(--light-blue);
-            position: relative;
-            z-index: 0;
-            top: -25px;
-            font-size: 1.3em;
-            padding: 50px 25px 10px 25px;
-        }
-
-        .image__face {
-            left: 30px;
-            clip-path: circle(var(--circle-clip-size));
-        }
-
-        .image__separator {
-            background: white;
-            clip-path: circle(calc(var(--circle-clip-size) - 3%));
-            height: 240px;
-        }
-
-        .image__separator-black {
-            background: #97A5BE;
-            clip-path: circle(calc(var(--circle-clip-size) - 1%));
-        }
-
-        .image__face-pic {
-            clip-path: circle(calc(var(--circle-clip-size) - 5%));
-            height: 100%;
-        }
-
-        .profile-box__image {
-            background-color: #FFF;
-            order: 2;
-            border: 3px solid #97A5BE;
-            border-left: white;
-            border-radius: 0px 250px 250px 0px;
-        }
-
-        .css-gqz0ym {
-            background: linear-gradient(136deg, #F5D114 12%, #D0990D 93%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        #scroll-text {
-            text-align: right;
-
-            /* animation properties */
-            -moz-transform: translateX(-100%);
-            -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-
-            -moz-animation: my-animation 18s linear infinite;
-            -webkit-animation: my-animation 18s linear infinite;
-            animation: my-animation 18s linear infinite;
-        }
-
-        /* for Firefox */
-        @-moz-keyframes my-animation {
-            from {
-                -moz-transform: translateX(0%);
-            }
-
-            to {
-                -moz-transform: translateX(100%);
-            }
-        }
-
-        /* for Chrome */
-        @-webkit-keyframes my-animation {
-            from {
-                -webkit-transform: translateX(-100%);
-            }
-
-            to {
-                -webkit-transform: translateX(100%);
-            }
-        }
-
-        @keyframes my-animation {
-            from {
-                -moz-transform: translateX(-65%);
-                -webkit-transform: translateX(-65%);
-                transform: translateX(-65%);
-            }
-
-            to {
-                -moz-transform: translateX(65%);
-                -webkit-transform: translateX(65%);
-                transform: translateX(65%);
-            }
-
-        }
-
-        .profile-box {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .pistachio {
-            background-color: rgb(250, 239, 223);
-            z-index: -1;
-        }
-
-        .profile-box__text {
-            background-color: #FFF;
-            order: 1;
-            border: 3px solid #97A5BE;
-            padding: 20px;
-            border-right: white;
-            display: flex;
-            margin: 0px -15px;
-            flex-wrap: wrap;
-        }
-
-        .profile-box__text--size {
-            font-size: 1.5rem;
-            max-width: 85%;
-        }
-
-        @media (max-width: 1180px) and (min-width: 970px) {
-            .image__face {
-                left: -10px;
-                transform-origin: center;
-                transform: scale(1.3);
-            }
-
-        }
-
-        @media screen and (max-width: 970px) {
-
-            .image__face {
-                left: 0px;
-                top: 10px;
-            }
-
-            .profile-box__text {
-                border: 3px solid #97A5BE;
-                display: block;
-            }
-
-            .profile-box__image {
-                border: 0px solid #97A5BE;
-                float: left;
-            }
-
-            .profile-box {
-                display: block;
-                /* flex-direction: column; */
-            }
-
-            .profile-box__text--size {
-                font-size: 1.5rem;
-                max-width: 100%;
-            }
+        h4 {
+            margin: 20px 0px;
         }
     </style>
 </head>
 
 <body>
-    <div class="bg__gradient d-flex align-items-center justify-content-center flex-column">
-        <h1 style="color:white;font-size: 4.75em;margin: 0 auto;max-width: 60%;" class="text-center css-gqz0ym">Want a
-            career in Consulting or Tech?</h1>
+    <div class="container bg__gradient d-flex align-items-center justify-content-center flex-column">
+        <h1>Right Motives</h1>
+    </div>
 
-        <!-- <marquee BEHAVIOR="loop" scrollamount=13 class="d-flex flex-row"
-            margin-right: 50px;">
-        </marquee> -->
-        <div id="scroll-text" style="position: absolute;bottom: 10%;">
-            <img style="height: 75px;"
-                src="https://placement-build.s3.us-east-2.amazonaws.com/assets/img/brands.86ffd21a67bc3b917873ae5d155aa97f.svg">
-        </div>
-    </div>
-    <div class="container">
-        <div class="row text-center flex-column">
-            <h1 class="py-5">Let's Make You a Dream Candidate!</h1>
-        </div>
-    </div>
-    <h1
-        style="background-color: var(--light-blue); padding: 20px 0px 50px 0px; color:#FFF;width: 100%;text-align: center;">
-        Services
-    </h1>
-    <div class="pistachio">
+    <hr style="border:2px solid #FFF2E6" />
+
+    <main>
         <div class="container">
-            <div class="row text-center">
-                <div class="d-flex flex-row w-100 flex-wrap">
-                    <div
-                        class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
-                        <div class="grid__icon-circle">
-                            <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
-                                style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+            <div class="row justify-content-center">
+                <h2>1-on-1's with top mentors</h2>
+                <h3>Our mentors come from industry leading companies</h3>
+                <img src="https://via.placeholder.com/875x350" />
+            </div>
+        </div>
+
+        <hr style="border:2px solid #FFF2E6" />
+
+        <div class="container">
+            <div class="row justify-content-center text-center flex-column">
+                <div class="">
+                    <h2>Designed for career success</h2>
+                    <p class="subtitle regular" style="max-width: 60%;">Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut
+                        enim
+                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </p>
+                </div>
+                <div class="d-flex success flex-wrap justify-content-center">
+                    <div>
+                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                        <h4>Learn from the best</h4>
+                        <p class="paragraph">We've brought together the best mentors from Google, Facebook, and other
+                            top companies, big
+                            and small.</p>
+                    </div>
+                    <div>
+                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                        <h4>Learn from the best</h4>
+                        <p class="paragraph">Learn online with live video sessions tailored to suit your schedule,
+                            including unlimited
+                            support whenever you want.</p>
+                    </div>
+                    <div>
+                        <span class="iconify" data-inline="false" data-icon="fluent:tap-single-24-regular"
+                            style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
+                        <h4>Learn from the best</h4>
+                        <p class="paragraph">Learn online with live video sessions tailored to suit your schedule,
+                            including unlimited
+                            support whenever you want.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr style="border:2px solid #FFF2E6" />
+
+        <div class="container">
+            <div class="row justify-content-center flex-column">
+                <h2 class="text-center">Select a track made for you</h2>
+                <div class="d-flex success">
+                    <div class="text-white"
+                        style="max-width: 350px; border-radius: 15px;box-shadow: 0 10px 30px 10px rgb(0 0 0 / 20%);">
+                        <div style="background-color: var(--light-blue);border-radius: 15px 15px 0 0;padding: 15px;">
+                            <span class="iconify text-white" data-inline="false" data-icon="ph:files-fill"
+                                style="font-size: 40px;border-width:150px;"></span>
+                            <h3>Industry Track</h3>
                         </div>
-                        <div class="grid__icon-box">
-                            Career Transition
+                        <div>
+                            <p style="padding: 15px;">Navigate the hiring process for different technology stacks, while
+                                learning how to
+                                approach technical interviews with data structures & algorithms.
+                            </p>
                         </div>
                     </div>
-                    <div
-                        class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
-                        <div class="grid__icon-circle">
-                            <span class="iconify" data-inline="false" data-icon="bx:bxs-book-content"
-                                style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
-                        </div>
-                        <div class="grid__icon-box">
-                            Resume Optimization
-                        </div>
-                    </div>
-                    <div
-                        class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
-                        <div class="grid__icon-circle">
-                            <span class="iconify" data-inline="false" data-icon="bi:people-fill"
-                                style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
-                        </div>
-                        <div class="grid__icon-box">
-                            Interview Preparation
-                        </div>
-                    </div>
-                    <div
-                        class="grid__icons col-md-3 col-sm-6 justify-content-center align-items-center d-flex flex-column text-white">
-                        <div class="grid__icon-circle">
-                            <span class="iconify" data-inline="false" data-icon="fa-solid:comments-dollar"
-                                style="font-size: 50px;color: var(--light-blue);"></span>
-                        </div>
-                        <div class="grid__icon-box">
-                            Offer Negotiation
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
 
-        <div class="container pb-3 px-5 profile-box">
-            <div class="align-items-center justify-content-center d-flex profile-box__image">
-                <div class="image__face position-relative">
-                    <div class="image__separator-black">
-                        <div class="image__separator">
-                            <img class="image__face-pic" src="src/Tolu-Lawal.jpeg" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="profile-box__text">
-                <p class="text-blue profile-box__text--size">Tolu’s services came out of his own
-                    experience landing jobs at <img style="height:60px;" src="logos/Accenture-Logo.png"
-                        alt="Accenture logo" />, <img style="height:15px;" src="logos/Uber_logo.png" alt="Uber logo" />,
-                    <img style="height:30px;" src="logos/Google_Logo.png" alt="Google Logo" /> &<img
-                        style="height:30px;" src="logos/Stripe_logo_colored.png" alt="Stripe Logo" />.
-                </p>
-                <p class="text-blue profile-box__text--size">He has helped clients secure offers
-                    from Uber, Amazon, Walkme, Microsoft,
-                    Salesforce, Apple, Facebook, Lyft, Google, Bumble, Spotify, Sony...</p>
-            </div>
-        </div>
-    </div>
-    <div
-        style="background-color: var(--light-blue); color:#FFF;font-size: 2em; font-weight: 500; width: 100%;text-align: center;padding: 20px 0px;position: relative; z-index: 0;">
-        <div>Resources</div>
-        <div class="d-flex flex-row flex-wrap py-4">
-            <div
-                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
-                <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="ph:files-fill"
-                        style="font-size: 40px;color: var(--light-blue);border-width:150px;"></span>
-                </div>
-                <div>Sample<br>Resumes</div>
-            </div>
-            <div
-                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
-                <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="fluent:book-question-mark-24-regular"
-                        style="font-size: 40px;color: var(--light-blue);border-width:150px;"></span>
-                </div>
-                <div>Questions<br>Repository</div>
-            </div>
-            <div
-                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
-                <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="bi:collection-play-fill"
-                        style="font-size: 40px;color: var(--light-blue);border-width:150px;"></span>
-                </div>
-                <div>Curated<br>Videos/books</div>
-            </div>
-            <div
-                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
-                <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="clarity:employee-group-solid"
-                        style="font-size: 40px;color: var(--light-blue);border-width:150px;"></span>
-                </div>
-                <div>Employee<br>Referrals</div>
-            </div>
-            <div
-                class="col-md-5-items col-sm-6 justify-content-center align-items-center d-flex flex-column line__circle">
-                <div class="line__icon-circle flex-column">
-                    <span class="iconify" data-inline="false" data-icon="dashicons:money-alt"
-                        style="font-size: 50px;color: var(--light-blue);border-width:150px;"></span>
-                </div>
-                <div>Pay<br>Data</div>
-            </div>
-        </div>
-    </div>
-    <div class="container py-4 px-4">
-        <div class="row text-center">
-            <div class="d-flex flex-column w-100">
-                <h1 style="color:var(--light-blue);">Contact</h1>
-                <h2>therightmotives@gmail.com</h2>
-                <a href="www.google.com" style="text-decoration: underline;">
-                    <h4>Click here to schedule a free 15 minute consultation.</h4>
-                </a>
-            </div>
-        </div>
+    </main>
 
+    <hr style="border:2px solid #FFF2E6" />
+
+    <footer class="text-center d-flex justify-content-center" style="background-color: var(--light-cream); padding: 20px;">
+        <h3 style="margin-right: 20px;">Land your dream job</h3>
+        <button type="button" class="btn btn-light" style="background-color: #FFF;border-color: #FFF;border-radius: 50px;"><a href="">Get Started</a></button>
+    </footer>
 </body>
 
 </html>
