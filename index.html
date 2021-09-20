@@ -24,14 +24,8 @@
             color: var(--light-black);
         }
 
-        p {
-            color: var(--light-gray);
-            /* max-width: 65%; */
-            margin: 0 auto;
-        }
-
         .subtitle.regular {
-            margin-bottom: 40px;
+            margin: 0px auto 40px;
             font-size: 20px;
             line-height: 30px;
         }
@@ -74,8 +68,10 @@
     <nav>
         <div class="hero-background"></div>
         <div class="container pb-5 pt-3" style="min-height: 600px;">
-            <div class="row"><h1>Right Motives</h1></div>
-            <div class="row flex-row ">
+            <div class="row px-4">
+                <h1>Right Motives</h1>
+            </div>
+            <div class="row flex-row px-4">
                 <div style="max-width: 700px;padding-top: 100px;">
                     <div class="pt-5" style="font-size: 3rem;font-weight: 700;">
                         Let’s make you <br>A Dream Candidate!
@@ -99,12 +95,14 @@
         <div class="container py-4">
             <div class="row justify-content-center flex-column">
                 <h2 class="m-auto pb-3">Job offers from top Companies</h2>
-                <p class="pb-3">Clients have gotten offers from industry leading companies</p>
-                <picture class="m-auto">
-                    <source media="(max-width: 799px)" srcset="https://via.placeholder.com/375x350">
-                    <source media="(min-width: 800px)" srcset="https://via.placeholder.com/875x350">
-                    <img src="https://via.placeholder.com/875x350" alt="Chris standing up holding his daughter Elva">
-                  </picture>
+                <p class="pb-3 subtitle regular text-center">Clients have gotten offers from industry leading companies
+                </p>
+                <picture class="m-auto p-5">
+                    <source media="(max-width: 799px)" srcset="logos/All_15_Logos_Portrait.png">
+                    <source media="(min-width: 800px)" srcset="logos/All_15_Logos_Landscape.png">
+                    <img class="w-100" src="https://via.placeholder.com/875x350"
+                        alt="Chris standing up holding his daughter Elva">
+                </picture>
             </div>
         </div>
 
@@ -188,16 +186,22 @@
 
         <hr style="border:2px solid #FFF2E6" />
 
-        <div class="container">
-            <h2 class="text-center pb-5">Select a track made for you</h2>
-            <div class="row justify-content-center">
+        <div class="container py-3">
+            <h2 class="text-center pb-4">Select a track made for you</h2>
+            <div class="row justify-content-center pt-3">
                 <div class="d-flex success">
-                    <div class="text-white"
+                    <div class=""
                         style="max-width: 350px; border-radius: 15px;box-shadow: 0 10px 30px 10px rgb(0 0 0 / 20%);">
-                        <div style="background-color: var(--light-blue);border-radius: 15px 15px 0 0;padding: 15px;">
-                            <span class="iconify text-white" data-inline="false" data-icon="ph:files-fill"
-                                style="font-size: 40px;border-width:150px;"></span>
-                            <h3 class="d-inline-block">Industry Track</h3>
+                        <div class="d-flex"
+                            style="background-color: var(--light-blue);border-radius: 15px 15px 0 0;padding: 15px;">
+                            <div class="pr-2">
+                                <span class="iconify text-white" data-inline="false" data-icon="ph:files-fill"
+                                    style="font-size: 50px; border-width:150px;"></span>
+                            </div>
+                            <div class="text-white">
+                                <p class="p-0 m-0">Industry Track</p>
+                                <h5 class="p-0 m-0">Software Engineering</h5>
+                            </div>
                         </div>
                         <div>
                             <p style="padding: 15px;">Navigate the hiring process for different technology stacks, while
@@ -208,13 +212,20 @@
                     </div>
 
                 </div>
+
                 <div class="d-flex success">
-                    <div class="text-white"
+                    <div class=""
                         style="max-width: 350px; border-radius: 15px;box-shadow: 0 10px 30px 10px rgb(0 0 0 / 20%);">
-                        <div style="background-color: var(--light-blue);border-radius: 15px 15px 0 0;padding: 15px;">
-                            <span class="iconify text-white" data-inline="false" data-icon="ph:files-fill"
-                                style="font-size: 40px;border-width:150px;"></span>
-                            <h3 class="d-inline-block">Industry Track</h3>
+                        <div class="d-flex"
+                            style="background-color: var(--light-blue);border-radius: 15px 15px 0 0;padding: 15px;">
+                            <div class="pr-2">
+                                <span class="iconify text-white" data-inline="false" data-icon="ph:files-fill"
+                                    style="font-size: 50px; border-width:150px;"></span>
+                            </div>
+                            <div class="text-white">
+                                <p class="p-0 m-0">Industry Track</p>
+                                <h5 class="p-0 m-0">Software Engineering</h5>
+                            </div>
                         </div>
                         <div>
                             <p style="padding: 15px;">Navigate the hiring process for different technology stacks, while
@@ -225,13 +236,20 @@
                     </div>
 
                 </div>
+
                 <div class="d-flex success">
-                    <div class="text-white"
+                    <div class=""
                         style="max-width: 350px; border-radius: 15px;box-shadow: 0 10px 30px 10px rgb(0 0 0 / 20%);">
-                        <div style="background-color: var(--light-blue);border-radius: 15px 15px 0 0;padding: 15px;">
-                            <span class="iconify text-white" data-inline="false" data-icon="ph:files-fill"
-                                style="font-size: 40px;border-width:150px;"></span>
-                            <h3 class="d-inline-block">Industry Track</h3>
+                        <div class="d-flex"
+                            style="background-color: var(--light-blue);border-radius: 15px 15px 0 0;padding: 15px;">
+                            <div class="pr-2">
+                                <span class="iconify text-white" data-inline="false" data-icon="ph:files-fill"
+                                    style="font-size: 50px; border-width:150px;"></span>
+                            </div>
+                            <div class="text-white">
+                                <p class="p-0 m-0">Industry Track</p>
+                                <h5 class="p-0 m-0">Software Engineering</h5>
+                            </div>
                         </div>
                         <div>
                             <p style="padding: 15px;">Navigate the hiring process for different technology stacks, while
@@ -242,6 +260,7 @@
                     </div>
 
                 </div>
+
             </div>
         </div>
 
