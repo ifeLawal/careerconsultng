@@ -5,10 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tolus Website</title>
+    <meta name="theme-color" content="#000000" />
+    <meta name="description"
+        content="Come and get guidance in your path to a top tech company. From choosing which roles to pursue, to negotiating your job offers, we help you get the most out of every step you take." />
+    <meta property="og:site_name" content="Right Motives">
+    <meta property="og:title" content="Right Motives">
+    <meta property="og:url" content="https://ifelawal.github.io/careerconsultng/">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Right Motives">
+    <meta itemprop="url" content="https://ifelawal.github.io/careerconsultng/">
+    <!-- <meta name="twitter:title" content="NYC Movies on a map">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="description" content=""> -->
+    <title>Right Motives | Your Guide Into Tech</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <script>
+        // init controller
+        var controller = new ScrollMagic.Controller();
+    </script>
+
     <style>
         :root {
             --light-blue: #7F8EF4;
@@ -61,6 +81,52 @@
             -ms-transform: rotate(-10deg);
             transform: rotate(-10deg);
         }
+
+        /* #reveal1 {
+            opacity: 0;
+            -webkit-transform: scale(0.9);
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -o-transform: scale(0.9);
+            transform: scale(0.9);
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+
+        #reveal1.visible {
+            opacity: 1;
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+        } */
+
+        .container {
+            opacity: 0;
+            -webkit-transform: translateY(40px);
+            -moz-transform: translateY(40px);
+            -ms-transform: translateY(40px);
+            -o-transform: translateY(40px);
+            transform: translateY(40px);
+            -webkit-transition: all 0.6s ease-out;
+            -moz-transition: all 0.6s ease-out;
+            -ms-transition: all 0.6s ease-out;
+            -o-transition: all 0.6s ease-out;
+            transition: all 0.6s ease-out;
+        }
+
+        .container.visible {
+            opacity: 1;
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+        }
     </style>
 </head>
 
@@ -106,9 +172,10 @@
             </div>
         </div>
 
-        <hr style="border:2px solid #FFF2E6" />
 
-        <div class="container">
+        <hr style="border:2px solid #FFF2E6" />
+        <div id="trigger1" class="spacer s0"></div>
+        <div id="reveal1" class="container">
             <div class="row justify-content-center text-center flex-column">
                 <div class="">
                     <h2 class="py-3">Supporting your Career Transition</h2>
@@ -273,5 +340,28 @@
             style="background-color: #FFF;border-color: #FFF;border-radius: 50px;"><a href="">Get Started</a></button>
     </footer>
 </body>
+
+<script>
+    // build scenes
+    var revealElements = document.getElementsByClassName("container");
+    for (var i = 0; i < revealElements.length; i++) { // create a scene for each element
+        new ScrollMagic.Scene({
+            triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+            offset: 50,												 // start a little later
+            triggerHook: 0.8,
+        })
+            .setClassToggle(revealElements[i], "visible") // add class toggle
+            .addTo(controller);
+    }
+    // build scene
+    new ScrollMagic.Scene({
+        triggerElement: "#trigger1",
+        triggerHook: 0.9, // show, when scrolled 10% into view
+        offset: 50, // move trigger to center of element
+        reverse: false
+    })
+        .setClassToggle("#reveal1", "visible") // add class to reveal
+        .addTo(controller);
+</script>
 
 </html>
